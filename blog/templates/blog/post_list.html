@@ -1,6 +1,9 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+    {% load el_pagination_tags %}
+
+    {% paginate posts %}
     {% for post in posts %}
     <div class="post">
         <div class="date">
@@ -10,4 +13,6 @@
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
     {% endfor %}
+    {% show_pages %}
+
 {% endblock content %}
