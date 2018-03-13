@@ -1,13 +1,21 @@
 <html>
 <head>
-    <title>TEST</title>
+    <title>My first Blog</title>
 </head>
 <body>
     <p>
-        Hi There...
+    <h1>My blog</h1>
+    <h2>First practice in django</h2>
     </p>
     <p>
         IT WORKS!
     </p>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
